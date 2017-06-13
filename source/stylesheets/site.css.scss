@@ -1,12 +1,23 @@
+$blue-50: #E3F2FD;
+$blue-100: #BBDEFB;
+$blue-200: #90CAF9;
+$blue-300: #64B5F6;
+$blue-400: #42A5F5;
+$blue-500: #2196F3;
+$blue-600: #1E88E5;
+$blue-700: #1976D2;
+$blue-800: #1565C0;
+$blue-900: #0D47A1;
+
 body {
-  background-color: #fbc547;
+  //background-color: #fbc547;
   color: #333;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
-  text-align: center;
+  //padding: 18vh 1rem;
+  //text-align: center;
 }
 
 a {
@@ -21,4 +32,42 @@ a {
 .middleman-logo {
   margin-bottom: 1rem;
   width: 10rem;
+}
+
+.carddemoBasicUsage .card-media {
+  background-color: #999999; }
+
+.md-sidenav-left {
+  width: 250px;
+  background-color: $blue-800;
+}
+.nav-header {
+  //background-color: #106CC8;
+  //background: -webkit-linear-gradient(#185694, #106cc8);
+  //background: linear-gradient(#185694, #106cc8);
+  //border-bottom: 1px solid #267ED5;
+  //-webkit-flex-shrink: 0;
+  //        flex-shrink: 0;
+  //z-index: 2;
+}
+
+.nav-header img {
+  width: 250px;
+}
+
+md-sidenav md-content  {
+  background-color: $blue-800;
+  color: white;
+  font-size:13px;
+}
+md-sidenav md-content .head {
+  font-size: 18pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+md-sidenav md-content .subhead {
+  font-size: 13pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

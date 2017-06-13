@@ -1,7 +1,108 @@
 ---
 title: Sam's Personal Site
+Education_text: Computer Scenice, Hon.B.Sc, University of Toronto
+WorkExperience_text1: 2014 - Current  Performance Engineer for IBM BigInsights
+WorkExperience_text2: 2008 - 2014  Performance Engineer for IBM Information Server
+WorkExperience_text3: 2006 - 2008  Software Engineer, Team Lead, Front End Development for DB2 Replication
+WorkExperience_text4: 2002 - 2006  Software Engineer, Team Lead, Information Integrator Install Team
+WorkExperience_text5: 2000 - 2002  Software Engineer, Data Warehouse Center Backend Metadata
+WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
 ---
 
+<div ng-controller="AppCtrl" ng-cloak>
+  <section layout="row" flex>
+    <md-sidenav
+          class="md-sidenav-left"
+          md-component-id="left"
+          md-is-locked-open="$mdMedia('gt-sm')"
+          md-whiteframe="4">
+
+      <!--  <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+      -->
+      <header class="nav-header">
+        <img src="https://avatars0.githubusercontent.com/u/556932?v=3&s=400" alt="" />
+      </header>
+      <md-content layout-padding>
+
+        <p class="head">Samuel Wong</p>
+        <p class="subhead">Software Performance Engineer</p>
+
+        <p>
+          Enjoys working with technology.  Have expertise in improvement software performance and scalability.
+        </p>
+
+        <p class="subhead">Expertise</p>
+        <p></p>
+
+        <p class="subhead">Skills</p>
+        <p></p>
+
+        <p class="subhead">Contact</p>
+        <span>Email: wongsamuel@gmail.com</span>
+        <span>Web: nuts.mooo.com</span>
+
+      </md-content>
+
+    </md-sidenav>
+
+
+      <div layout="column">
+        <md-card>
+          <md-card-header>
+            <md-card-header-text>
+              <span class="md-title">Education</span>
+            </md-card-header-text>
+          </md-card-header>
+          <md-card-content>
+            <md-list-item class="md-3-line md-long-text">
+                     <img ng-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1024px-Utoronto_coa.svg.png" class="md-avatar" alt="{{todos[0].who}}" />
+                     <div class="md-list-item-text">
+                       <h3>University of Toronto</h3>
+                       <h4>Computer Science, Hon B.Sc</h4>
+                     </div>
+                   </md-list-item>
+          </md-card-content>
+        </md-card>
+
+        <md-card>
+          <md-card-header md-colors="::{backgroundColor: 'default-primary-700'}">
+            <md-card-header-text>
+              <span class="md-title">Work Experience</span>
+            </md-card-header-text>
+          </md-card-header>
+          <md-card-content>
+            <p><%= current_page.data.WorkExperience_text1%></p>
+            <p><%= current_page.data.WorkExperience_text2%></p>
+            <p><%= current_page.data.WorkExperience_text3%></p>
+            <p><%= current_page.data.WorkExperience_text4%></p>
+            <p><%= current_page.data.WorkExperience_text5%></p>
+            <p><%= current_page.data.WorkExperience_text6%></p>
+          </md-card-content>
+        </md-card>
+
+        <md-card>
+          <md-card-header md-colors="::{backgroundColor: 'default-primary-700'}">
+            <md-card-header-text>
+              <span class="md-title">Hobby</span>
+            </md-card-header-text>
+          </md-card-header>
+          <md-list>
+            <md-list-item>
+              <span>Single Row Item</span>
+            </md-list-item>
+          </md-list>
+        </md-card>
+
+
+      </div>
+
+
+  </section>
+</div>
+
+<!--
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
   <title id="middleman-logo__title">Middleman</title>
   <path class="middleman-logo__top-left-bar" fill-opacity=".45" d="M0 40L200 0v30L0 60z"/>
@@ -21,3 +122,4 @@ title: Sam's Personal Site
   "https://middlemanapp.com/basics/templating_language/",
   target: "_blank"
 ) %>
+-->
