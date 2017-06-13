@@ -6,6 +6,12 @@ activate :autoprefixer do |prefix|
 end
 
 activate :livereload
+
+activate :deploy do |deploy|
+  deploy.build_before = true # runs build before deploying
+  deploy.deploy_method = :git
+  deploy.branch = 'gh-pages'
+end
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
