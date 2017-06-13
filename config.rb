@@ -1,17 +1,25 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+set :relative_links, true
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
 activate :livereload
 
+configure :build do
+  activate :relative_assets
+end
+
 activate :deploy do |deploy|
   deploy.build_before = true # runs build before deploying
   deploy.deploy_method = :git
   deploy.branch = 'gh-pages'
 end
+
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
