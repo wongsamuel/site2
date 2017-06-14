@@ -71,3 +71,13 @@ md-sidenav md-content .subhead {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+md-card.education md-card-header {
+  background-color: $blue-800;
+  color: white;
+}
+
+md-card.experience md-card-header {
+  background-color: $blue-800;
+  color: white;
+}

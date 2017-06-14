@@ -11,18 +11,14 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
 
 <div ng-controller="AppCtrl" ng-cloak>
   <section layout="row" flex>
-    <md-sidenav
-          class="md-sidenav-left"
-          md-component-id="left"
-          md-is-locked-open="$mdMedia('gt-sm')"
-          md-whiteframe="4">
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
 
       <!--  <md-toolbar class="md-theme-indigo">
           <h1 class="md-toolbar-tools">Sidenav Left</h1>
         </md-toolbar>
       -->
       <header class="nav-header">
-        <img src="https://avatars0.githubusercontent.com/u/556932?v=3&s=400" alt="" />
+        <img src="https://avatars0.githubusercontent.com/u/556932?v=3&s=400" alt=""/>
       </header>
       <md-content layout-padding>
 
@@ -30,7 +26,7 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
         <p class="subhead">Software Performance Engineer</p>
 
         <p>
-          Enjoys working with technology.  Have expertise in improvement software performance and scalability.
+          Enjoys working with technology. Have expertise in improvement software performance and scalability.
         </p>
 
         <p class="subhead">Expertise</p>
@@ -40,64 +36,90 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
         <p></p>
 
         <p class="subhead">Contact</p>
-        <span>Email: wongsamuel@gmail.com</span>
-        <span>Web: nuts.mooo.com</span>
+        <span>Email:
+          <%= link_to(
+          "wongsamuel@gmail.com",
+          "mailto:wongsamuel@gmail.com"
+        ) %>
+        </span>
+        <span>Web:
+          <%= link_to(
+          "http://nuts.mooo.com",
+          "http://nuts.mooo.com/",
+          target: "_blank"
+        ) %>
+        </span>
 
       </md-content>
 
     </md-sidenav>
 
+    <div layout="column">
 
-      <div layout="column">
-        <md-card>
-          <md-card-header>
-            <md-card-header-text>
-              <span class="md-title">Education</span>
-            </md-card-header-text>
-          </md-card-header>
-          <md-card-content>
-            <md-list-item class="md-3-line md-long-text">
-                     <img ng-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1024px-Utoronto_coa.svg.png" class="md-avatar" alt="{{todos[0].who}}" />
-                     <div class="md-list-item-text">
-                       <h3>University of Toronto</h3>
-                       <h4>Computer Science, Hon B.Sc</h4>
-                     </div>
-                   </md-list-item>
-          </md-card-content>
-        </md-card>
+      <md-card class="experience">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Work Experience</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <p><%= current_page.data.WorkExperience_text1%></p>
+          <p><%= current_page.data.WorkExperience_text2%></p>
+          <p><%= current_page.data.WorkExperience_text3%></p>
+          <p><%= current_page.data.WorkExperience_text4%></p>
+          <p><%= current_page.data.WorkExperience_text5%></p>
+          <p><%= current_page.data.WorkExperience_text6%></p>
+        </md-card-content>
+      </md-card>
 
-        <md-card>
-          <md-card-header md-colors="::{backgroundColor: 'default-primary-700'}">
-            <md-card-header-text>
-              <span class="md-title">Work Experience</span>
-            </md-card-header-text>
-          </md-card-header>
-          <md-card-content>
-            <p><%= current_page.data.WorkExperience_text1%></p>
-            <p><%= current_page.data.WorkExperience_text2%></p>
-            <p><%= current_page.data.WorkExperience_text3%></p>
-            <p><%= current_page.data.WorkExperience_text4%></p>
-            <p><%= current_page.data.WorkExperience_text5%></p>
-            <p><%= current_page.data.WorkExperience_text6%></p>
-          </md-card-content>
-        </md-card>
+      <md-card class="education">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Education</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <md-list-item class="md-3-line md-long-text">
+            <img ng-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1024px-Utoronto_coa.svg.png" class="md-avatar" alt="{{todos[0].who}}"/>
+            <div class="md-list-item-text">
+              <h3>University of Toronto</h3>
+              <h4>Software Engineering, Hon B.Sc</h4>
+              <p>Honours List</p>
+            </div>
+          </md-list-item>
+        </md-card-content>
+      </md-card>
 
-        <md-card>
-          <md-card-header md-colors="::{backgroundColor: 'default-primary-700'}">
-            <md-card-header-text>
-              <span class="md-title">Hobby</span>
-            </md-card-header-text>
-          </md-card-header>
-          <md-list>
-            <md-list-item>
-              <span>Single Row Item</span>
-            </md-list-item>
-          </md-list>
-        </md-card>
+      <md-card class="experience">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Archievements</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <md-list-item class="md-3-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2015</h3>
+              <h4>HackSpark Contest - Most Popular Vote</h4>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2015</h3>
+              <h4>IBM Invention Achievement Award - First Plateau</h4>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>1997</h3>
+              <h4>Semi-finalist of HeadStart Java Programming Contest (hosted by IBM and Footprint Software Inc.)</h4>
+            </div>
+          </md-list-item>
 
+        </md-card-content>
+      </md-card>
 
-      </div>
-
+    </div>
 
   </section>
 </div>
