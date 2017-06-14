@@ -7,11 +7,153 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title>Sam's Personal Site</title>
+    <!--<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
     <link href="stylesheets/site.css" rel="stylesheet" />
-    <script src="javascripts/site.js"></script>
+
   </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
+  <body ng-app="starter-app">
+    <div ng-controller="AppCtrl" ng-cloak>
+  <section layout="row" flex>
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
+
+      <!--  <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+      -->
+      <header class="nav-header">
+        <img src="images/portrait2.jpg" alt=""/>
+      </header>
+      <md-content layout-padding>
+
+        <p class="head">Samuel Wong</p>
+        <p class="subhead">Software Performance Engineer</p>
+
+        <p>
+          Top performing and well rounded Performance Engineer with over 18 years of experience in Software Engineering.  Self-motivated with strong passion in technologies and enjoy solving challenging problems.
+        </p>
+
+        <p class="subhead">Expertise</p>
+        <p></p>
+
+        <p class="subhead">Skills</p>
+        <!--<div id="wordsCloud"> <word-cloud words="AppCtrl.words" width="AppCtrl.width" height="AppCtrl.height" on-click="AppCtrl.wordClicked"> </word-cloud> </div>-->
+        <div id="wordsCloud"> <word-cloud words="words" width="width" height="height" on-click="wordClicked"> </word-cloud> </div>
+
+        <p class="subhead">Contact</p>
+        <span>Email:
+          <a href="mailto:wongsamuel@gmail.com">wongsamuel@gmail.com</a>
+        </span>
+        <span>Web:
+          <a href="http://nuts.mooo.com/" target="_blank">http://nuts.mooo.com</a>
+        </span>
+
+      </md-content>
+
+    </md-sidenav>
+
+    <div layout="column">
+
+      <md-card class="experience">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Work Experience</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <p>2014 - Current  Performance Engineer for IBM BigInsights</p>
+          <p>2008 - 2014  Performance Engineer for IBM Information Server</p>
+          <p>2006 - 2008  Software Engineer, Team Lead, Front End Development for DB2 Replication</p>
+          <p>2002 - 2006  Software Engineer, Team Lead, Information Integrator Install Team</p>
+          <p>1998 - 2000  Software Engineer, IBM DB2 Support</p>
+          <p></p>
+        </md-card-content>
+      </md-card>
+
+      <md-card class="education">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Education</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <md-list-item class="md-3-line md-long-text">
+            <img ng-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1024px-Utoronto_coa.svg.png" class="md-avatar" alt="{{todos[0].who}}"/>
+            <div class="md-list-item-text">
+              <h3>University of Toronto</h3>
+              <h4>Software Engineering, Hon B.Sc</h4>
+              <p>Honours List</p>
+            </div>
+          </md-list-item>
+        </md-card-content>
+      </md-card>
+
+      <md-card class="training">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Training</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2016</h3>
+              <h4>Advanced Akka with Scala</h4>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2016</h3>
+              <h4>Fast Track to Scala</h4>
+            </div>
+          </md-list-item>
+
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2016</h3>
+              <h4>IBM Cloud Platform Application Development</h4>
+            </div>
+
+          </md-list-item>
+        </md-card-content>
+      </md-card>
+
+      <md-card class="experience">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Archievements</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2015</h3>
+              <h4>HackSpark Contest - Most Popular Vote</h4>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2015</h3>
+              <h4>IBM Invention Achievement Award - First Plateau</h4>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>1997</h3>
+              <h4>Semi-finalist of HeadStart Java Programming Contest (hosted by IBM and Footprint Software Inc.)</h4>
+            </div>
+          </md-list-item>
+
+        </md-card-content>
+      </md-card>
+
+    </div>
+
+  </section>
+</div>
+
+<!--
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
   <title id="middleman-logo__title">Middleman</title>
   <path class="middleman-logo__top-left-bar" fill-opacity=".45" d="M0 40L200 0v30L0 60z"/>
   <path class="middleman-logo__top-right-bar" fill="#fff" d="M200 0l200 40v20L200 30z"/>
@@ -26,6 +168,47 @@
 </h1>
 
 <a href="https://middlemanapp.com/basics/templating_language/" target="_blank">Read Documentation</a>
+-->
 
   </body>
+
+
+
+  <!--
+    Your HTML content here
+  -->
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <!--
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script src="bower_components/d3-cloud/build/d3.layout.cloud.js"></script>
+  <script src="bower_components/angular-d3-word-cloud/dist/angular-word-cloud.min.js"></script>
+
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+
+  <script src="javascripts/app.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-100968707-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </html>

@@ -1,0 +1,145 @@
+<h1 id="angular-d3-word-cloud">angular-d3-word-cloud</h1>
+
+<p><a href="https://travis-ci.org/weihanchen/angular-d3-word-cloud"><img src="https://travis-ci.org/weihanchen/angular-d3-word-cloud.svg?branch=master" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/weihanchen/angular-d3-word-cloud?branch=master"><img src="https://coveralls.io/repos/github/weihanchen/angular-d3-word-cloud/badge.svg?branch=master" alt="Coverage Status" /></a></p>
+
+<h2 id="run-examples-with-server">Run examples with server</h2>
+<p><code>
+$ npm install
+$ npm run test
+$ npm run dev //default server port is 8000
+$ npm run release //build release files
+</code></p>
+
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+  <li><a href="https://angularjs.org/">angular.js</a></li>
+  <li><a href="https://d3js.org/">d3.js</a></li>
+  <li><a href="https://www.jasondavies.com/wordcloud/">d3.layout.cloud.js</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+<p>Watch the wordcloud component in action on the <a href="https://weihanchen.github.io/angular-d3-word-cloud/">demo page</a>.</p>
+
+<h2 id="how-to-use">How to use</h2>
+
+<h3 id="install">Install</h3>
+
+<h5 id="bower">bower</h5>
+
+<pre><code>$ bower install angular-d3-word-cloud
+</code></pre>
+
+<p><a href="https://angularjs.org/">angular.js</a>, <a href="https://d3js.org/">d3.js</a>, <a href="https://www.jasondavies.com/wordcloud/">d3.layout.cloud.js</a> would be install as dependencies auto. If it won't for some error, install it manually.</p>
+
+<pre><code>$ bower install angular
+$ bower install d3
+$ bower install d3-cloud
+</code></pre>
+
+<h5 id="npm">npm</h5>
+<p><code>
+$ npm install angular-d3-word-cloud
+</code></p>
+
+<h2 id="inject-scripts">Inject scripts</h2>
+<p>Add dependencies to the &lt;head&gt; section of your index html:</p>
+
+<p>```html</p>
+<meta charset="utf-8" />
+<p><!-- it's important for d3.js -->
+<script src="[bower_components/node_modules]/jquery/dist/jquery.min.js"></script>
+<script src="[bower_components/node_modules]/angular/angular.min.js"></script>
+<script src="[bower_components/node_modules]/d3/d3.min.js"></script>
+<script src="[bower_components/node_modules]/d3-cloud/build/d3.layout.cloud.js"></script>
+<script src="[bower_components/node_modules]/angular-d3-word-cloud/dist/angular-word-cloud.min.js"></script>
+```</p>
+
+<h2 id="options">Options</h2>
+<p>Note: if words element not contains color property, default will use <a href="https://github.com/d3/d3-scale#category-scales">d3 schemeCategory20</a>
+* <code>words=[array]</code> -&gt; [{text: '',size: 0, color: '#6d989e'}]
+* <code>height=[number]</code>
+* <code>width=[number]</code>
+* <code>padding=[string]</code> -&gt; [optional] padding for each word, defaults to <code>5</code>
+* <code>rotate=[number, function]</code> -&gt; [optional] rotation for each word, default to <code>~~(Math.random() * 2) * 60</code>
+* <code>on-click=[function]</code> -&gt; word clicked callback</p>
+
+<h2 id="directive-usage">Directive Usage</h2>
+<p>```html</p>
+<div id="wordsCloud">
+   <word-cloud words="appCtrl.words" width="appCtrl.width" height="appCtrl.height" padding="5" rotate="appCtrl.rotate" on-click="appCtrl.wordClicked">
+   </word-cloud>
+</div>
+<p>```</p>
+
+<h2 id="basic-usage">Basic usage</h2>
+<p>Inject <code>angular-d3-word-cloud</code> into angular module, set up some options to our controller</p>
+
+<p>```javascript
+	(function(){
+	angular.module('app',['angular-d3-word-cloud'])
+		.controller('appController',['$window','$element',appController])
+	function appController($window,$element){
+		var self = this;
+		self.height = $window.innerHeight * 0.5;
+		self.width = $element.find('#wordsCloud')[0].offsetWidth;
+		self.wordClicked = wordClicked;
+        self.rotate = rotate;
+		self.words = [
+			{text: 'Angular',size: 25, color: '#6d989e'},
+			{text: 'Angular2',size: 35, color: '#473fa3'}
+		]</p>
+
+<pre><code>    function rotate() {
+        return ~~(Math.random() * 2) * 90;
+    }
+
+	function wordClicked(word){
+		alert('text: ' + word.text + ',size: ' + word.size);
+	}
+} })() ``` ## Advanced usage ## ### Define some content and split(/\s+/g) ###
+</code></pre>
+
+<p><code>javascript
+	var content = 'Angular Angular2 Angular3 Express Nodejs';
+	originWords = self.content.split(/\s+/g);
+    originWords = originWords.map(function(word) {
+        return {
+            text: word,
+            count: Math.floor(Math.random() * maxWordCount)
+        }
+     }).sort(function(a, b) {
+          return b.count - a.count;
+     })
+</code></p>
+
+<h3 id="font-size-calculations">Font size calculations</h3>
+
+<p><code>javascript
+	 var element = $element.find('#wordsCloud');
+     var height = $window.innerHeight * 0.75;
+     element.height(height);
+     var width = element[0].offsetWidth;
+     var maxCount = originWords[0].count;
+     var minCount = originWords[originWords.length - 1].count;
+     var maxWordSize = width * 0.15;
+     var minWordSize = maxWordSize / 5;
+     var spread = maxCount - minCount;
+     if (spread &lt;= 0) spread = 1;
+     var step = (maxWordSize - minWordSize) / spread;
+     self.words = originWords.map(function(word) {
+         return {
+             text: word.text,
+             size: Math.round(maxWordSize - ((maxCount - word.count) * step)),
+             color: '#473fa3'//you can assign custom color
+         }
+     })
+     self.width = width;
+     self.height = height;
+</code></p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="https://github.com/jasondavies/d3-cloud">Word Cloud Layout</a> by <a href="https://www.jasondavies.com/">Jason Davies</a>.</li>
+  <li><a href="https://github.com/d3/d3">D3.js</a></li>
+</ul>
