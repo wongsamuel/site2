@@ -1,5 +1,6 @@
 ---
 title: Sam's Personal Site
+About_text: Top performing and well rounded Performance Engineer with over 18 years of experience in Software Engineering.  Self-motivated with strong passion in technologies and enjoy solving challenging problems.
 Education_text: Computer Scenice, Hon.B.Sc, University of Toronto
 WorkExperience_text1: 2014 - Current  Performance Engineer for IBM BigInsights
 WorkExperience_text2: 2008 - 2014  Performance Engineer for IBM Information Server
@@ -18,7 +19,7 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
         </md-toolbar>
       -->
       <header class="nav-header">
-        <img src="https://avatars0.githubusercontent.com/u/556932?v=3&s=400" alt=""/>
+        <img src="images/portrait2.jpg" alt=""/>
       </header>
       <md-content layout-padding>
 
@@ -26,14 +27,15 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
         <p class="subhead">Software Performance Engineer</p>
 
         <p>
-          Enjoys working with technology. Have expertise in improvement software performance and scalability.
+          <%= current_page.data.About_text%>
         </p>
 
         <p class="subhead">Expertise</p>
         <p></p>
 
         <p class="subhead">Skills</p>
-        <p></p>
+        <!--<div id="wordsCloud"> <word-cloud words="AppCtrl.words" width="AppCtrl.width" height="AppCtrl.height" on-click="AppCtrl.wordClicked"> </word-cloud> </div>-->
+        <div id="wordsCloud"> <word-cloud words="words" width="width" height="height" on-click="wordClicked"> </word-cloud> </div>
 
         <p class="subhead">Contact</p>
         <span>Email:
@@ -90,6 +92,36 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
         </md-card-content>
       </md-card>
 
+      <md-card class="training">
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Training</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2016</h3>
+              <h4>Advanced Akka with Scala</h4>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2016</h3>
+              <h4>Fast Track to Scala</h4>
+            </div>
+          </md-list-item>
+
+          <md-list-item class="md-2-line md-long-text">
+            <div class="md-list-item-text">
+              <h3>2016</h3>
+              <h4>IBM Cloud Platform Application Development</h4>
+            </div>
+
+          </md-list-item>
+        </md-card-content>
+      </md-card>
+
       <md-card class="experience">
         <md-card-header>
           <md-card-header-text>
@@ -97,19 +129,19 @@ WorkExperience_text5: 1998 - 2000  Software Engineer, IBM DB2 Support
           </md-card-header-text>
         </md-card-header>
         <md-card-content>
-          <md-list-item class="md-3-line md-long-text">
+          <md-list-item class="md-2-line md-long-text">
             <div class="md-list-item-text">
               <h3>2015</h3>
               <h4>HackSpark Contest - Most Popular Vote</h4>
             </div>
           </md-list-item>
-          <md-list-item class="md-3-line md-long-text">
+          <md-list-item class="md-2-line md-long-text">
             <div class="md-list-item-text">
               <h3>2015</h3>
               <h4>IBM Invention Achievement Award - First Plateau</h4>
             </div>
           </md-list-item>
-          <md-list-item class="md-3-line md-long-text">
+          <md-list-item class="md-2-line md-long-text">
             <div class="md-list-item-text">
               <h3>1997</h3>
               <h4>Semi-finalist of HeadStart Java Programming Contest (hosted by IBM and Footprint Software Inc.)</h4>
