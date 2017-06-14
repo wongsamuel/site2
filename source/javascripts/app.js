@@ -29,8 +29,13 @@ angular
       {text: 'JVM',size: medium},
       {text: 'C/C++',size: small}
    ];
+   seed=1;
+   //console.log(seed);
    $scope.rotate=function(){
-     return ~~(Math.random() * 2) * 90;
+     //return ~~(Math.random() * 2) * 90;
+     result= ~~(Math.abs(Math.sin(seed++))*2) * 90;
+     //console.log(result);
+     return result;
    }
 })
 .config(function($mdThemingProvider) {
