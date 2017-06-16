@@ -8,9 +8,9 @@ angular
     medium=15;
     small=10;
     $scope.words=[
-      {text: 'Performance',size: large},
-      {text: 'BigData',size: medium},
+      {text: 'Performance',size: large, color: 'rgb(51, 139, 200)'},
       {text: 'Scalability',size: large},
+      {text: 'BigData',size: medium},
       {text: 'Bottleneck',size: medium},
       {text: 'SysStats',size: medium},
       {text: 'nmon',size: medium},
